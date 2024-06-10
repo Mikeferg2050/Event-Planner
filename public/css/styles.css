@@ -78,11 +78,11 @@ main {
 }
 
 .toggle-button.off {
-  background-image: url("assets/OFF.png"); /* Replace with your "off" image path */
+  background-image: url("/public/assets/OFF.png"); /* Replace with your "off" image path */
 }
 
 .toggle-button.on {
-  background-image: url("assets/ON.png"); /* Replace with your "on" image path */
+  background-image: url("/public/assets/ON.png"); /* Replace with your "on" image path */
 }
 
 /* Modal styles */
