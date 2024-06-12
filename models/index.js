@@ -1,7 +1,7 @@
 const User = require('./users');
 const Sounds = require('./Sound');
 
-User.hasMany(Sound, {
+User.hasMany(Sounds, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
