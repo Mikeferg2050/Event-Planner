@@ -1,3 +1,24 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  flex: 1 1 100%; /* Grow and shrink with a basis of 100% */
+}
+
+@media (min-width: 600px) {
+  .item {
+    flex: 1 1 50%;
+  }
+}
+
+@media (min-width: 900px) {
+  .item {
+    flex: 1 1 33.33%;
+  }
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -58,17 +79,23 @@ nav h1 {
 }
 
 main {
+  display: inline-flex;
+  text-align: row;
+  margin-top: 50px;
   margin-top: 2em;
   text-align: center;
 }
 
 .toggle-buttons {
-  margin-top: 2em;
+  background-color: transparent;
+  margin-top: 1em;
   display: flex;
   gap: 1em;
 }
 
 .toggle-button {
+  display: ;
+  background-color: transparent;
   width: 100px; /* Adjust the size as needed */
   height: 100px;
   background-size: cover;
@@ -77,12 +104,33 @@ main {
   outline: none;
 }
 
+.toggle-buttons {
+  flex-direction: column;
+}
+
+.button-title {
+  flex-direction: column;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.toggle-buttons h1 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+.favorites {
+  font-size: 18px;
+}
 .toggle-button.off {
   background-image: url("/public/assets/OFF.png"); /* Replace with your "off" image path */
 }
 
 .toggle-button.on {
   background-image: url("/public/assets/ON.png"); /* Replace with your "on" image path */
+}
+
+.toggle-button {
 }
 
 /* Modal styles */
@@ -163,5 +211,35 @@ main {
 }
 
 #login-form button:hover {
+  background-color: #0056b3;
+}
+
+#signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+#signup-form label {
+  margin-bottom: 0.5em;
+}
+
+#signup-form input {
+  padding: 0.5em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#signup-form button {
+  padding: 0.5em 1em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#signup-form button:hover {
   background-color: #0056b3;
 }

@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const loginButton = document.getElementById("login-button");
+  const signupButton = document.getElementById("signup-button");
   const loginModal = document.getElementById("login-modal");
+  const signupModel = document.getElementById("signup-model");
   const closeButton = document.querySelector(".close-button");
 
   loginButton.addEventListener("click", () => {
@@ -14,6 +16,22 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("click", (event) => {
     if (event.target == loginModal) {
       loginModal.style.display = "none";
+    }
+  });
+
+  // --------------------------
+
+  signupButton.addEventListener("click", () => {
+    signupModel.style.display = "block";
+  });
+
+  closeButton.addEventListener("click", () => {
+    signupModel.style.display = "none";
+  });
+
+  window.addEventListener("click", (event) => {
+    if (event.target == signupModel) {
+      signupModal.style.display = "none";
     }
   });
 
