@@ -2,35 +2,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginButton = document.getElementById("login-button");
   const signupButton = document.getElementById("signup-button");
   const loginModal = document.getElementById("login-modal");
-  const signupModel = document.getElementById("signup-model");
-  const closeButton = document.querySelector(".close-button");
+  const signupModal = document.getElementById("signup-modal");
+  const closeButtons = document.querySelectorAll(".close-button");
 
   loginButton.addEventListener("click", () => {
     loginModal.style.display = "block";
   });
 
-  closeButton.addEventListener("click", () => {
-    loginModal.style.display = "none";
+  signupButton.addEventListener("click", () => {
+    signupModal.style.display = "block";
+  });
+
+  closeButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      button.closest(".modal").style.display = "none";
+    });
   });
 
   window.addEventListener("click", (event) => {
-    if (event.target == loginModal) {
+    if (event.target === loginModal) {
       loginModal.style.display = "none";
     }
-  });
-
-  // --------------------------
-
-  signupButton.addEventListener("click", () => {
-    signupModel.style.display = "block";
-  });
-
-  closeButton.addEventListener("click", () => {
-    signupModel.style.display = "none";
-  });
-
-  window.addEventListener("click", (event) => {
-    if (event.target == signupModel) {
+    if (event.target === signupModal) {
       signupModal.style.display = "none";
     }
   });
@@ -49,11 +42,51 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleButton.classList.toggle("on");
       toggleButton.classList.toggle("off");
 
-      // Automatically turn off the button after a delay (e.g., 2 seconds)
       setTimeout(() => {
         toggleButton.classList.add("off");
         toggleButton.classList.remove("on");
-      }, 250); // 2000 milliseconds = 2 seconds
+      }, 250);
     });
+  });
+
+  document.querySelectorAll('input[type="file"]').forEach((input) => {
+    input.addEventListener("change", (event) => {
+      const buttonId = input.id.replace("upload", "button");
+      const file = event.target.files[0];
+      if (file) {
+        const audio = document.createElement("audio");
+        audio.src = URL.createObjectURL(file);
+        document.getElementById(buttonId).addEventListener("click", () => {
+          audio.play();
+        });
+      }
+    });
+  });
+
+  document.querySelectorAll('.favorite').forEach((checkbox) => {
+    checkbox.addEventListener('change', (event) => {
+      const buttonId = event.target.getAttribute('data-button');
+      const button = document.getElementById(buttonId);
+      const soundSrc = button.querySelector('audio')?.src;
+
+      if (event.target.checked && soundSrc) {
+        localStorage.setItem(buttonId, soundSrc);
+      } else {
+        localStorage.removeItem(buttonId);
+      }
+    });
+  });
+
+  // Login form handling (dummy implementation)
+  document.getElementById('login-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+    window.location.href = 'user.html'; // Redirect to user page on login
+  });
+
+  // Signup form handling (dummy implementation)
+  document.getElementById('signup-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+    alert('Account created!');
+    signupModal.style.display = 'none';
   });
 });

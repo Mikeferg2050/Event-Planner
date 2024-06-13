@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soundboard</title>
+    <link rel="stylesheet" href="/public/css/styles.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <img src="assets/sound border logo.svg" alt="Logo" class="logo" />
+      </div>
+      <div class="nav-center">
+        <input type="text" id="search-bar" placeholder="Search sounds..." />
+      </div>
+      <div class="nav-right">
+        <button id="login-button">Log In</button>
+        <button id="signup-button">Sign Up</button>
+      </div>
+    </nav>
+
+    <main>
+      <div class="toggle-buttons">
+        <div class="button-title">Button One</div>
+        <button class="toggle-button off" id="button1"></button>
+        <input type="file" id="upload1" accept="audio/mp4" />
+        <div class="favorites">
+          <input type="checkbox" class="favorite" data-button="button1" />
+          <label for="favorites">Favorite</label>
+        </div>
+
+        <div class="button-title">Button Two</div>
+        <button class="toggle-button off" id="button2"></button>
+        <input type="file" id="upload2" accept="audio/mp4" />
+        <div class="favorites">
+          <input type="checkbox" class="favorite" data-button="button2" />
+          <label for="favorites">Favorite</label>
+        </div>
+
+        <div class="button-title">Button Three</div>
+        <button class="toggle-button off" id="button3"></button>
+        <input type="file" id="upload3" accept="audio/mp4" />
+        <div class="favorites">
+          <input type="checkbox" class="favorite" data-button="button3" />
+          <label for="favorites">Favorite</label>
+        </div>
+
+        <div class="button-title">Button Four</div>
+        <button class="toggle-button off" id="button4"></button>
+        <input type="file" id="upload4" accept="audio/mp4" />
+        <div class="favorites">
+          <input type="checkbox" class="favorite" data-button="button4" />
+          <label for="favorites">Favorite</label>
+        </div>
+
+        <div class="button-title">Button Five</div>
+        <button class="toggle-button off" id="button5"></button>
+        <input type="file" id="upload5" accept="audio/mp4" />
+        <div class="favorites">
+          <input type="checkbox" class="favorite" data-button="button5" />
+          <label for="favorites">Favorite</label>
+        </div>
+      </div>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Login</h2>
+        <form id="login-form">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit">Log In</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+          <label for="signup-username">Username:</label>
+          <input type="text" id="signup-username" name="signup-username" required />
+          <label for="signup-password">Password:</label>
+          <input type="password" id="signup-password" name="signup-password" required />
+          <label for="confirm-password">Confirm Password:</label>
+          <input type="password" id="confirm-password" name="confirm-password" required />
+          <button type="submit">Create Account</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="/public/js/scripts.js"></script>
+  </body>
+</html>
