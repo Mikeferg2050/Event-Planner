@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User, Sound } = require('../models');
+const { User, Sounds } = require('../models');
 
 const userData = require('./userData.json');
 const soundsData = require('./soundsData.json');
@@ -13,7 +13,7 @@ const seedDatabase = async () => {
   });
 
   for (const sound of soundsData) {
-    await Sound.create({
+    await Sounds.create({
       ...sound,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });

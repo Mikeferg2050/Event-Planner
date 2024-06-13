@@ -1,12 +1,19 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Sound extends Model {}
+class Sounds extends Model {}
 
-Sound.init(
+Sounds.init(
   {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     title: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     mp3: {
       type: DataTypes.STRING
@@ -24,4 +31,4 @@ Sound.init(
   }
 );
 
-module.exports = Sound;
+module.exports = Sounds;
