@@ -13,10 +13,7 @@ const seedDatabase = async () => {
   });
 
   for (const sound of soundsData) {
-    await Sounds.create({
-      ...sound,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
+    await Sounds.create(sound)
   }
 
   process.exit(0);

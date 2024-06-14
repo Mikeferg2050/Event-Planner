@@ -89,4 +89,46 @@ document.addEventListener("DOMContentLoaded", () => {
     alert('Account created!');
     signupModal.style.display = 'none';
   });
+
+
+
+    
+
 });
+
+
+
+//////////////////////////// Rendering Buttons and Audio Play Functionality //////////////////////////////////
+
+  // Get the audio element
+  const audioPlayers = document.getElementsByClassName('audioPlayer');
+  // Get the image element
+  const audioControls = document.getElementsByClassName('audioControl');
+
+  const soundButtons = document.getElementsByClassName('soundButtons');
+
+  const audioArray = {}
+
+  console.log(audioPlayers.length);
+  console.log(audioControls.length);
+  console.log(soundButtons.length);
+
+
+  for (let i = 0; i < audioPlayers.length; i++) {
+    audioControls[i].addEventListener('click', function() {toggleAudio(i)});
+  }
+
+  
+
+
+  
+
+  // Function to toggle audio playback
+  function toggleAudio(x) {
+      if (audioPlayers[x].paused) {
+          audioPlayers[x].play();
+      } else {
+          audioPlayers[x].pause();
+          audioPlayers[x].currentTime = 0; // Reset audio to start when stopped
+      }
+  }

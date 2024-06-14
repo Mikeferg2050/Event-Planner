@@ -1,7 +1,17 @@
 [
   {
     "title": "dry fart",
-    "mp3": "./public/assets/dry-fart.mp3",
+    "mp3": "/assets/dry-fart.mp3",
     "img": "./public/assets/OFF.png"
+  },
+  {
+    "title": "dry fart2",
+    "mp3": "/assets/dry-fart.mp3",
+    "img": "./publaegets/OFF.png"
+  },
+  {
+    "title": "dry fart3",
+    "mp3": "assets/dry-fart.mp3",
+    "img": "./publaegaegic/assets/agOFF.png"
   }
 ]
