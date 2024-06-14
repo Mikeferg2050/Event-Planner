@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Login form handling (dummy implementation)
   document.getElementById('login-form').addEventListener('submit', (event) => {
     event.preventDefault();
-    window.location.href = 'user.html'; // Redirect to user page on login
+    window.location.href = '/profile'; // Redirect to user page on login
   });
 
   // Signup form handling (dummy implementation)
