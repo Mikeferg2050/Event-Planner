@@ -19,6 +19,8 @@
   }
 }
 
+
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -94,7 +96,7 @@ main {
 }
 
 .toggle-button {
-  display: ;
+  
   background-color: transparent;
   width: 100px; /* Adjust the size as needed */
   height: 100px;
@@ -105,7 +107,7 @@ main {
 }
 
 .toggle-buttons {
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .button-title {

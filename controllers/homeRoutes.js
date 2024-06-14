@@ -28,17 +28,18 @@ router.get('/', async (req, res) => {
 router.get('/sound/:id', async (req, res) => {
   try {
     const soundData = await Sounds.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: ['name'],
+      //   },
+      // ],
     });
 
     const sound = soundData.get({ plain: true });
+    
 
-    res.render('sound', {
+    res.render('main', {
       ...sound,
       logged_in: req.session.logged_in
     });
