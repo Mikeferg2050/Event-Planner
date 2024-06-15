@@ -1,28 +1,29 @@
+<main>
+  <div class='toggle-buttons'>
 
-    <main>
-      <div class="toggle-buttons">
-        
-        {{#each sounds as |sound| }}
+    {{#each sounds as |sound|}}
 
-          <!-- Replace the audio player with a clickable image -->
-          <div id="full-button">
-            <div class="button-title">{{sound.title}}</div>
-            <button class="audioControl toggle-button off" alt="Play Button"></button>
+      <!-- Replace the audio player with a clickable image -->
+      <div id='full-button'>
+        <div class='button-title'>{{sound.title}}</div>
+        <button
+          class='audioControl toggle-button off'
+          alt='Play Button'
+        ></button>
 
-            <audio class="audioPlayer">
-              <source src={{sound.mp3}} type="audio/mpeg">
-              Your browser does not support the audio element.
-            </audio>
-            <div class="favorites">
-              <input type="checkbox" class="favorite" data-button="button1" />
-              <label for="favorites">Favorite</label>
-            </div>
-          </div>
-        
-        {{/each}}
+        <audio class='audioPlayer'>
+          <source src={{sound.mp3}} type='audio/mpeg' />
+          Your browser does not support the audio element.
+        </audio>
+        <div class='favorites'>
+          <input type='checkbox' class='favorite' data-button='button1' />
+          <label for='favorites'>Favorite</label>
+        </div>
+      </div>
 
-        
-        {{!-- <div class="button-title">Button One</div>
+    {{/each}}
+
+    {{! <div class="button-title">Button One</div>
         <button class="toggle-button off" id="button1"></button>
         <input type="file" id="upload1" accept="audio/mp4" />
         <div class="favorites">
@@ -60,9 +61,44 @@
         <div class="favorites">
           <input type="checkbox" class="favorite" data-button="button5" />
           <label for="favorites">Favorite</label>
-        </div> --}}
+        </div> }}
+  </div>
+
+  {{!-- ADDED FOR RECORDER --}}
+    <div class="container">
+    <h3 class="center-align">Audio Recorder</h3>
+    <div class="row">
+        <div class="col s12">
+            <button id="recordButton" class="btn waves-effect waves-light red">Start Recording</button>
+            <button id="stopButton" class="btn waves-effect waves-light grey" disabled>Stop Recording</button>
+        </div>
+    </div>
+
+    <div class='container'>
+        </div>
       </div>
+      <div class='row'>
+        <div class='col s12'>
+          <audio id='audioPlayback' controls></audio>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col s12'>
+          <button
+            id='uploadButton'
+            class='btn waves-effect waves-light blue'
+            disabled
+          >Upload Recording</button>
+        </div>
+      </div>
+    </div>
 
-    </main>
+  
 
-    <footer>Funny sounds to suit the mood!<br>Made by Michael, Orrndrea, Sheck, and Hasan.</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/js/recorder.js"></script>
+
+</main>
+
+<footer>Funny sounds to suit the mood!<br />Made by Michael, Orrndrea, Sheck,
+  and Hasan.</footer>
