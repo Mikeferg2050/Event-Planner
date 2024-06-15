@@ -122,6 +122,7 @@ main {
 .favorites {
   font-size: 18px;
 }
+
 .toggle-button.off {
   background-image: url("../assets/OFF.png"); /* Replace with your "off" image path */
 }
@@ -242,4 +243,12 @@ main {
 
 #signup-form button:hover {
   background-color: #0056b3;
+}
+
+.user-name {
+  color:#444
+  display: inline-flex;
+  margin-left:
+  margin-top: 2em;
+  text-align: center;
 }

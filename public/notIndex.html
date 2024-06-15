@@ -5,28 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Soundboard</title>
     <link rel="stylesheet" href="/public/css/styles.css" />
+    
+    <!-- ----------------------- -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- ------------------ -->
   </head>
   <body>
+
+    
+
+
     <nav>
       <div class="nav-left">
-        <h1>Soundboard</h1>
+        <img src="assets/sound border logo.svg" alt="Logo" class="logo" />
       </div>
       <div class="nav-center">
         <input type="text" id="search-bar" placeholder="Search sounds..." />
       </div>
       <div class="nav-right">
-        <img src="path/to/logo.png" alt="Logo" class="logo" />
         <button id="login-button">Log In</button>
+        <button id="signup-button">Sign Up</button>
       </div>
     </nav>
 
+    
+
     <main>
       <div class="toggle-buttons">
-        <button class="toggle-button off"></button>
-        <button class="toggle-button off"></button>
-        <button class="toggle-button off"></button>
-        <button class="toggle-button off"></button>
-        <button class="toggle-button off"></button>
+        <div class="button-title">Button One</div>
+        <button class="toggle-button off" id="button1"></button>
+        <input type="file" id="upload1" accept="audio/mp4" />
+        <div class="favorites">
+          <input type="checkbox" class="favorite" data-button="button1" />
+          <label for="favorites">Favorite</label>
+        </div>
+
+        <div class="button-title">Button Two</div>
+        <button class="toggle-button off" id="button2"></button>
+        <input type="file" id="upload2" accept="audio/mp4" />
+        <div class="favorites">
+          <input type="checkbox" class="favorite" data-button="button2" />
+          <label for="favorites">Favorite</label>
+        </div>
+
+        <div class="button-title">Button Three</div>
+        <button class="toggle-button off" id="button3"></button>
+        <input type="file" id="upload3" accept="audio/mp4" />
+        <div class="favorites">
+          <input type="checkbox" class="favorite" data-button="button3" />
+          <label for="favorites">Favorite</label>
+        </div>
+
+        <div class="button-title">Button Four</div>
+        <button class="toggle-button off" id="button4"></button>
+        <input type="file" id="upload4" accept="audio/mp4" />
+        <div class="favorites">
+          <input type="checkbox" class="favorite" data-button="button4" />
+          <label for="favorites">Favorite</label>
+        </div>
+
+        <div class="button-title">Button Five</div>
+        <button class="toggle-button off" id="button5"></button>
+        <input type="file" id="upload5" accept="audio/mp4" />
+        <div class="favorites">
+          <input type="checkbox" class="favorite" data-button="button5" />
+          <label for="favorites">Favorite</label>
+        </div>
       </div>
     </main>
 
@@ -44,6 +89,99 @@
         </form>
       </div>
     </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+          <label for="signup-username">Username:</label>
+          <input type="text" id="signup-username" name="signup-username" required />
+          <label for="signup-password">Password:</label>
+          <input type="password" id="signup-password" name="signup-password" required />
+          <label for="confirm-password">Confirm Password:</label>
+          <input type="password" id="confirm-password" name="confirm-password" required />
+          <button type="submit">Create Account</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3 class="center-align">Audio Recorder</h3>
+      <div class="row">
+          <div class="col s12">
+              <button id="recordButton" class="btn waves-effect waves-light red">Start Recording</button>
+              <button id="stopButton" class="btn waves-effect waves-light grey" disabled>Stop Recording</button>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col s12">
+              <audio id="audioPlayback" controls></audio>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col s12">
+              <button id="uploadButton" class="btn waves-effect waves-light blue" disabled>Upload Recording</button>
+          </div>
+      </div>
+  </div>
+  
+
+
+  <script>
+    let recorder, audioChunks;
+
+    document.getElementById('recordButton').addEventListener('click', async () => {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        recorder = new MediaRecorder(stream);
+        audioChunks = [];
+
+        recorder.ondataavailable = event => {
+            audioChunks.push(event.data);
+        };
+
+        recorder.onstop = () => {
+            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+            const audioUrl = URL.createObjectURL(audioBlob);
+            const audio = document.getElementById('audioPlayback');
+            audio.src = audioUrl;
+            document.getElementById('uploadButton').disabled = false;
+
+            // Store the blob to be used for upload
+            audioBlobToUpload = audioBlob;
+        };
+
+        recorder.start();
+        document.getElementById('recordButton').disabled = true;
+        document.getElementById('stopButton').disabled = false;
+    });
+
+    document.getElementById('stopButton').addEventListener('click', () => {
+        recorder.stop();
+        document.getElementById('recordButton').disabled = false;
+        document.getElementById('stopButton').disabled = true;
+    });
+
+    document.getElementById('uploadButton').addEventListener('click', () => {
+        const formData = new FormData();
+        formData.append('audio', audioBlobToUpload, 'recording.wav');
+
+        fetch('/upload', {
+            method: 'POST',
+            body: formData
+        }).then(response => {
+            if (response.ok) {
+                M.toast({html: 'Upload successful!'});
+            } else {
+                M.toast({html: 'Upload failed!'});
+            }
+        }).catch(error => {
+            M.toast({html: 'Upload error!'});
+        });
+    });
+</script>
+
 
     <script src="/public/js/scripts.js"></script>
   </body>
