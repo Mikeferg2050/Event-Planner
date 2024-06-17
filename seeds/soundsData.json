@@ -63,5 +63,35 @@
     "title": "ka-ching",
     "mp3": "/assets/kaching.mp3",
     "img": "filter: brightness(50%) sepia(100) saturate(1) hue-rotate(341deg);"
+  },
+  {
+    "title": "laughter",
+    "mp3": "/assets/sitcom-laughing.mp3",
+    "img": "filter: brightness(50%) sepia(100) saturate(1) hue-rotate(7deg);"
+  },
+  {
+    "title": "spongebob fail",
+    "mp3": "/assets/spongebob-fail.mp3",
+    "img": "filter: brightness(50%) sepia(100) saturate(1) hue-rotate(194deg);"
+  },
+  {
+    "title": "wrong answer",
+    "mp3": "/assets/wrong-answer.mp3",
+    "img": "filter: brightness(50%) sepia(100) saturate(1) hue-rotate(144deg);"
+  },
+  {
+    "title": "alert",
+    "mp3": "/assets/alert.mp3",
+    "img": "filter: brightness(50%) sepia(100) saturate(1) hue-rotate(86deg);"
+  },
+  {
+    "title": "crickets",
+    "mp3": "/assets/crickets.mp3",
+    "img": "filter: brightness(50%) sepia(100) saturate(1) hue-rotate(106deg);"
+  },
+  {
+    "title": "ding",
+    "mp3": "/assets/ding.mp3",
+    "img": "filter: brightness(50%) sepia(100) saturate(1) hue-rotate(10deg);"
   }
 ]
