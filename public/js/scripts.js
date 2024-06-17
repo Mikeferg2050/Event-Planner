@@ -77,18 +77,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Login form handling (dummy implementation)
-  document.getElementById('login-form').addEventListener('submit', (event) => {
-    event.preventDefault();
-    window.location.href = '/profile'; // Redirect to user page on login
-  });
+  // // Login form handling (dummy implementation)
+  // document.getElementById('login-form').addEventListener('submit', (event) => {
+  //   event.preventDefault();
+  //   // window.location.href = '/profile'; // Redirect to user page on login
+  // });
 
-  // Signup form handling (dummy implementation)
-  document.getElementById('signup-form').addEventListener('submit', (event) => {
-    event.preventDefault();
-    alert('Account created!');
-    signupModal.style.display = 'none';
-  });
+  // // Signup form handling (dummy implementation)
+  // document.getElementById('signup-form').addEventListener('submit', (event) => {
+  //   event.preventDefault();
+  //   alert('Account created!');
+  //   signupModal.style.display = 'none';
+  // });
 
 
 
@@ -105,13 +105,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Get the image element
   const audioControls = document.getElementsByClassName('audioControl');
 
-  const soundButtons = document.getElementsByClassName('soundButtons');
-
-  const audioArray = {}
-
   console.log(audioPlayers.length);
   console.log(audioControls.length);
-  console.log(soundButtons.length);
+
 
 
   for (let i = 0; i < audioPlayers.length; i++) {
