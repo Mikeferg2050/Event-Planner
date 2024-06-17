@@ -23,6 +23,8 @@ Sound Boarder may be used to play pre-loaded sounds with the touch of a button. 
 
 ## Screenshot
 
+![ScreenShot](public/assets/screenshot.png)
+
 ## Links
 
 ## Credits
