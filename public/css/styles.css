@@ -20,8 +20,6 @@
   }
 }
 
-
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -46,8 +44,8 @@ nav {
 footer {
   padding: auto;
   margin-top: auto;
-  position:fixed;
-  bottom:0;
+  position: fixed;
+  bottom: 0;
   height: auto;
   text-align: center;
   width: 100%;
@@ -137,7 +135,6 @@ main {
 }
 
 .toggle-button {
-  
   background-color: transparent;
   width: 100px; /* Adjust the size as needed */
   height: 100px;
@@ -169,12 +166,11 @@ main {
   font-size: 18px;
 }
 .toggle-button.off {
-  background-image: url("../assets/OFF.png"); /* Replace with your "off" image path */
-  
+  background-image: url('../assets/OFF.png'); /* Replace with your "off" image path */
 }
 
 .toggle-button.on {
-  background-image: url("../assets/ON.png"); /* Replace with your "on" image path */
+  background-image: url('../assets/ON.png'); /* Replace with your "on" image path */
 }
 
 .toggle-button {
@@ -314,3 +310,6 @@ main {
   display: none;
 }
 
+h3 {
+  color: #ffffff;
+}
