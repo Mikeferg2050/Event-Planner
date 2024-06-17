@@ -2,16 +2,66 @@
   {
     "title": "dry fart",
     "mp3": "/assets/dry-fart.mp3",
-    "img": "./public/assets/OFF.png"
+    "img": "filter: brightness(50%) sepia(100) saturate(1) hue-rotate(0deg);"
   },
   {
-    "title": "dry fart2",
-    "mp3": "/assets/dry-fart.mp3",
-    "img": "./publaegets/OFF.png"
+    "title": "our hero",
+    "mp3": "/assets/JamieWelcomeAll.mp3",
+    "img": "filter: brightness(50%) sepia(100) saturate(3) hue-rotate(110deg);"
   },
   {
-    "title": "dry fart3",
-    "mp3": "assets/dry-fart.mp3",
-    "img": "./publaegaegic/assets/agOFF.png"
+    "title": "awww",
+    "mp3": "/assets/awww.mp3",
+    "img": "filter: brightness(50%) sepia(100) saturate(1) hue-rotate(92deg);"
+  },
+  {
+    "title": "punch",
+    "mp3": "/assets/punch.mp3",
+    "img": "filter: brightness(50%) sepia(100) saturate(1) hue-rotate(0deg);"
+  },
+  {
+    "title": "my bling",
+    "mp3": "/assets/sonic-rings-drop.mp3",
+    "img": "filter: brightness(50%) sepia(100) saturate(1) hue-rotate(180deg);"
+  },
+  {
+    "title": "undertaker",
+    "mp3": "/assets/undertaker.mp3",
+    "img": "filter: brightness(50%) sepia(100) saturate(1) hue-rotate(70deg);"
+  },
+  {
+    "title": "censor",
+    "mp3": "/assets/censor-beep.mp3",
+    "img": "filter: brightness(50%) sepia(100) saturate(1) hue-rotate(12deg);"
+  },
+  {
+    "title": "kawhi",
+    "mp3": "/assets/kawhi.mp3",
+    "img": "filter: brightness(50%) sepia(100) saturate(1) hue-rotate(171deg);"
+  },
+  {
+    "title": "perfect",
+    "mp3": "/assets/perfect.mp3",
+    "img": "filter: brightness(50%) sepia(100) saturate(1) hue-rotate(333deg);"
+  },
+  {
+    "title": "to be continued",
+    "mp3": "/assets/To-Be-Continued.mp3",
+    "img": "filter: brightness(50%) sepia(100) saturate(1) hue-rotate(20deg);"
+  },
+  {
+    "title": "ack",
+    "mp3": "/assets/ack.mp3",
+    "img": "filter: brightness(50%) sepia(100) saturate(1) hue-rotate(146deg);"
+  },
+  {
+    "title": "dj airhorn",
+    "mp3": "/assets/dj-airhorn.mp3",
+    "img": "filter: brightness(50%) sepia(100) saturate(1) hue-rotate(321deg);"
+  },
+  {
+    "title": "ka-ching",
+    "mp3": "/assets/kaching.mp3",
+    "img": "filter: brightness(50%) sepia(100) saturate(1) hue-rotate(341deg);"
   }
 ]

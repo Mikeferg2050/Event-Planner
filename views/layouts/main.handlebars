@@ -12,19 +12,27 @@
   <body>
     <nav>
       <div class='nav-left'>
-        <img src='/assets/sound border logo.svg' alt='Logo' class='logo' />
+        <a href="/"><img src='/assets/sound border logo.svg' alt='Logo' class='logo' style="width:215"></a>
+        
       </div>
       <div class='nav-center'>
         <input type='text' id='search-bar' placeholder='Search sounds...' />
       </div>
       <div class='nav-right'>
-        <button id='login-button'>Log In</button>
-        <button id='signup-button'>Sign Up</button>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+          <a href="/profile"><button type="button" class="btn btn-primary buttonUI">Profile</button></a>
+          <button id='logout' class="buttonUI">Logout</button>
+        {{else}}
+          <button id='login-button'>Log In</button>
+          <button id='signup-button'>Sign Up</button>
+        {{/if}}
+        
       </div>
     </nav>
 
     {{{body}}}
-
+    
     <!-- Login Modal -->
     <div id='login-modal' class='modal'>
       <div class='modal-content'>
@@ -60,11 +68,11 @@
             name='signup-password'
             required
           />
-          <label for='confirm-password'>Confirm Password:</label>
+          <label for='signup-email'>Email:</label>
           <input
-            type='password'
-            id='confirm-password'
-            name='confirm-password'
+            type='text'
+            id='signup-email'
+            name='signup-email'
             required
           />
           <button type='submit'>Create Account</button>
@@ -77,5 +85,7 @@
       src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'
     ></script>
     <script src='/js/recorder.js'></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/logout.js"></script>
   </body>
 </html>

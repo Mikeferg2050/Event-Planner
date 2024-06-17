@@ -1,6 +1,7 @@
 .container {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 100px;
 }
 
 .item {
@@ -44,14 +45,14 @@ nav {
 
 footer {
   padding: auto;
-  margin-top: 0px;
-  position:absolute;
+  margin-top: auto;
+  position:fixed;
   bottom:0;
   height: auto;
   text-align: center;
   width: 100%;
-  background-color: #070707;
   color: rgba(245, 245, 220, 0.808);
+  background-image: linear-gradient(to bottom, rgb(7, 14, 15), rgb(7, 7, 7));
 }
 
 nav h1 {
@@ -90,6 +91,18 @@ nav h1 {
   cursor: pointer;
 }
 
+.buttonUI {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+.buttonUI:hover {
+  background-color: #ffffffab;
+}
+
 #login-button:hover {
   background-color: #ffffffab;
 }
@@ -108,10 +121,12 @@ nav h1 {
 
 main {
   display: inline-flex;
+  flex-direction: column;
   text-align: row;
   margin-top: 50px;
   margin-top: 2em;
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .toggle-buttons {
@@ -134,6 +149,9 @@ main {
 
 .toggle-buttons {
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80vw;
 }
 
 .button-title {
@@ -152,6 +170,7 @@ main {
 }
 .toggle-button.off {
   background-image: url("../assets/OFF.png"); /* Replace with your "off" image path */
+  
 }
 
 .toggle-button.on {

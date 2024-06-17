@@ -9,6 +9,7 @@
         <button
           class='audioControl toggle-button off'
           alt='Play Button'
+          style="{{sound.img}}"
         ></button>
 
         <audio class='audioPlayer'>
@@ -66,7 +67,7 @@
 
   {{!-- ADDED FOR RECORDER --}}
     <div class="container">
-    <h3 class="center-align">Audio Recorder</h3>
+    <h3 class="center-align" style="width: 58vw;">Audio Recorder</h3>
     <div class="row">
         <div class="col s12">
             <button id="recordButton" class="btn waves-effect waves-light red">Start Recording</button>
@@ -74,7 +75,8 @@
         </div>
     </div>
 
-    <div class='container'>
+    
+    <div>
         </div>
       </div>
       <div class='row'>
@@ -94,7 +96,7 @@
     </div>
 
   
-
+    <script src='/js/scripts.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="/js/recorder.js"></script>
 
