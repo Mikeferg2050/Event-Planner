@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Sounds extends Model {}
-
+// sounds with incrementing id, allowing us to generate buttons with unique sound effects and color alterations
 Sounds.init(
   {
     id: {
