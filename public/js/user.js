@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = 'index.html'; // Redirect to main page on logout
   });
 
+
+  //generate buttons using elements created in a handlebars loop
   for (let i = 1; i <= 5; i++) {
     const soundSrc = localStorage.getItem(`button${i}`);
     if (soundSrc) {

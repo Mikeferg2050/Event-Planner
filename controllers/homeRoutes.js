@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Sounds, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+// load homepage
 router.get('/', async (req, res) => {
   try {
 
@@ -25,29 +26,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/sound/:id', async (req, res) => {
-  try {
-    const soundData = await Sounds.findByPk(req.params.id, {
-      // include: [
-      //   {
-      //     model: User,
-      //     attributes: ['name'],
-      //   },
-      // ],
-    });
-
-    const sound = soundData.get({ plain: true });
-    
-
-    res.render('main', {
-      ...sound,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
+//load profile page
 router.get('/profile', withAuth, async (req, res) => {
   try {
 
@@ -66,15 +45,5 @@ router.get('/profile', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-// router.get('/login', (req, res) => {
-  
-//   if (req.session.logged_in) {
-//     res.redirect('/profile');
-//     return;
-//   }
-
-//   res.render('login');
-// });
 
 module.exports = router;
