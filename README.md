@@ -27,6 +27,9 @@ Sound Boarder may be used to play pre-loaded sounds with the touch of a button. 
 
 ## Links
 
+https://github.com/Mikeferg2050/Sound-Boarder
+https://sound-boarder.onrender.com
+
 ## Credits
   
    https://github.com/asupt - Hasan Khan
